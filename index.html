@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://assets.dunzo.com/images/icons/1/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./boostrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -15,105 +16,434 @@
     <title>Delivery | Dragon Ball Z</title>
 </head>
 
-<body class="bg-dark">
-    <nav class="navbar navbar-expand-xl bg-dark border-bottom">
-        <div class="container-lg container-fluid-md ">
-            <a class="text-light navbar-brand me-5" href="#">
-                <img src="./images/1.png" alt="logo" width="150" height="30">
-            </a>
-
-            <a class="text-light nav-item dropdown nav-link dropdown-toggle" href="#" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Set Location
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-            <button class="navbar-toggler text-bg-light" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon "></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center">
-                </ul>
-
-                <a href="#" class="text-light text-decoration-none mx-1">
-                    Dunzo for Partner
+<body class="">
+    <header>
+        <nav class="navbar navbar-expand-xl border-bottom bg-white position-fixed w-100">
+            <div class="container-lg container-fluid-md ">
+                <a class="navbar-brand me-5" href="#">
+                    <img src="./images/1.png" alt="logo" width="150" height="30">
                 </a>
 
-                <a class="ms-3 text-light nav-item dropdown nav-link dropdown-toggle" href="#" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Business with Dunzo
-                </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="dropdown-item" href="#">Need Delivery Partners?</a>
-                        <a href="#" class="dropdown-item"> Sign up on Dunzo for Business and get your
-                            first delivery free</a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Sell Product on Dunzo</a>
-                        <a class="dropdown-item" href="#">Apply to get your products listed on the Dunzo app &
-                            website</a>
-                    </li>
-                </ul>
                 <!-- Button trigger modal -->
-                <div class="ms-3 text-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <i class="text-light fa fa-search ms-3"></i><br>
-                    search
-                </div>
+                <span class="" data-bs-toggle="modal" data-bs-target="#locationModal">
+                    <i class="fa fa-location-pin text-success"></i>
+                    Set Location
+                </span>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationHeading"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Search....</h1>
+                                <h1 class="modal-title fs-5" id="locationHeading">Select Your Location</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form class="d-flex">
-                                    <input type="text" class="form-control" placeholder="Search here">
-
+                                <form>
+                                    <input type="text" class="form-control" placeholder="Search Location">
                                 </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-danger"
-                                    data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-outline-primary">Search</button>
+                                <div class="container">
+                                    <img src="./images/select-location-empty.jpg" alt="..." class="col-11">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="ms-4">
-                    <a href="#" class="text-decoration-none text-light">
-                        <i class="fa fa-cart-shopping"></i><br>
-                        cart
+
+                <button class="navbar-toggler text-bg-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center">
+                    </ul>
+
+                    <a href="#" class="hoverText mx-1">
+                        Dunzo for Partner
+                    </a>
+                    <div class="dropdown">
+                        <a class="mx-2 hoverText" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Business with Dunzo
+                        </a>
+
+                        <ul class="dropdown-menu col-12">
+                            <li><a class="dropdown-item" href="#">Need Delivery Partners?</a></li>
+                            <li><a class="dropdown-item" href="#">Sign up on Dunzo for Business and get your
+                                    first delivery free</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Sell Product on Dunzo</a></li>
+                            <li><a class="dropdown-item" href="#">Apply to get your products listed on the Dunzo app &
+                                    website</a></li>
+                        </ul>
+                    </div>
+
+
+
+
+
+                    <!-- Button trigger modal -->
+                    <span class="hoverText" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="fa fa-search ms-3"></i><br>
+                        search
+                    </span>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="SearchHeading"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="SearchHeading">Search....</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="d-flex">
+                                        <input type="text" class="form-control" placeholder="Search here">
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-danger"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-outline-primary">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ms-4">
+                        <a href="#" class="hoverText">
+                            <i class="fa fa-cart-shopping"></i><br>
+                            cart
+                        </a>
+                    </div>
+
+                    <!-- Button trigger modal -->
+                    <button class="ms-2 btn btn-success rounded-5" data-bs-toggle="modal" data-bs-target="#signInModal">
+                        Sign In
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="./images/signin-icon.png" alt="" width="60" height="60">
+                                    <h4 class="h4 mt-4">Sign In</h4>
+                                    <p class="text-secondary-emphasis">Get Started With Dunzo</p>
+                                    <form>
+                                        <span class="text-danger">*</span>
+                                        <label class="form-label text-secondary-emphasis" for="">Enter Your Mobile
+                                            Number</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text bg-white" id="basic-addon1">
+                                                <i class="fa fa-phone-alt text-secondary-emphasis me-2"></i> +91
+                                            </span>
+                                            <input type="text" class="form-control rounded rounded-1 border-0"
+                                                placeholder="Mobile Number" aria-label="Username"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+
+                                        <input type="checkbox" name="" id="" class="form-check-input mt-2">
+                                        <span class="">
+                                            <a href="#" class="mt-2 text-decoration-none text-dark">I accept
+                                                the terms
+                                                and
+                                                Policy |</a>
+                                            <a class="txt-green"> Veiw T&C</a>
+                                        </span>
+                                    </form>
+                                </div>
+                                <div class="container">
+                                    <button type="button"
+                                        class="btn btn-outline-success mb-2 w-100 rounded rounded-5">Save
+                                        changes</button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main>
+
+
+        <div class="container-fluid bg-custom">
+            <div class="container p-1 d-flex justify-content-evenly">
+                <div class="d-flex">
+                    <img src="./images/logo in div.webp" alt="..." height="40" class="text-bg-secondary rounded-circle">
+                    <p class="ms-2 mt-3 mb-0 text-light">
+                        <strong>
+
+                            Order Paan items, munchies and much more on our new Dunzo Mo app
+                        </strong>
+                    </p>
+                </div>
+                <div class="mb-0 mt-3">
+                    <a href="#" class="text-decoration-none text-success">
+                        <strong> Download Duzo app now
+                            <i class="fa fa-arrow-right"></i></strong>
                     </a>
                 </div>
-
-                <div>
-                    <button type="button" class="btn btn-success ms-3 rounded-5"> SIGN IN</button>
-                </div>
-
             </div>
         </div>
-    </nav>
+
+        <section class="backgrond-custom">
+            <div class="container">
+                <p class="mt-3">
+                    <a class="txt-green" href="index.html">
+                        Home
+                    </a>
+                    <span class="text-secondary-emphasis">
+                        <i class="fa fa-arrow-right text-secondary-emphasis"></i>
+                        Nanded
+                    </span>
+                </p>
+            </div>
+            <div class="container">
+                <h1 class="h1">Nanded</h1>
+                <p class="p-text text-secondary-emphasis">
+                    Why step out when you can get everything delivered home with the tap of a button? Pune's favourite
+                    delivery app gets you Food, Grocery, Medicine, Pet Supplies, Fruits & Vegetables, Meat & Fish,
+                    Health & Wellness, Gifts and Send Packages from one end of the city to the other. From your local
+                    kirana stores to your favourite brands, grocery shopping to your forgotten charger, we are always on
+                    the move for you. Why worry about your chores, when you can get it all Dun!
+                </p>
+            </div>
+            <div class="container">
+                <a href="#" class="text-decoration-none">
+                    <img class="rounded-3 m-2" src="./images/image1.png" alt="..." height="180" width="244">
+                </a>
+                <a href="#" class="text-decoration-none">
+                    <img class="rounded-3 m-2" src="./images/image2.png" alt="..." height="180" width="244">
+                </a>
+                <a href="#" class="text-decoration-none">
+                    <img class="rounded-3 m-2" src="./images/image3.png" alt="..." height="180" width="244">
+                </a>
+                <a href="#" class="text-decoration-none">
+                    <img class="rounded-3 m-2" src="./images/image4.png" alt="..." height="180" width="244">
+                </a>
+            </div>
+            <div class="container d-flex justify-content-start mt-2 flex-column flex-lg-row flex-nowrap">
+                <a itemprop="url" href="/pune/meat-and-fish-stores" class="card-custom m-2 shadow flex-nowrap"><img
+                        src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_meat_tertiary_grid_1609739765849.png"
+                        class="" alt="" title="" width="40px" height="40px">
+                    <p>Meat and Fish</p>
+                </a>
+                <a itemprop="url" href="/pune/pet-supply-stores" class="card-custom m-2 shadow"><img
+                        src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_pets_tertiary_grid_1609739755734.png"
+                        class="" alt="" title="" width="40px" height="40px">
+                    <p>Pet Supplies</p>
+                </a>
+                <a itemprop="url" href="/pune/paan" class="card-custom m-2 shadow"><img
+                        src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/paan_grid_1609739855940.png"
+                        class="" alt="" title="" width="40px" height="40px">
+                    <p>Paan Shop</p>
+                    <div class="sc-AxjAm fbGkos sc-AxirZ ktnnZL sc-78nhxf-0 hFzDnm">
+                    </div>
+                </a>
+                <a itemprop="url" href="/pune/gifts" class="card-custom m-2 shadow"><img
+                        src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_gifts_tertiary_grid_1613527886275.png"
+                        class="" alt="" title="" width="40px" height="40px">
+                    <p>Gifts and Lifestyle</p>
+                </a>
+            </div>
+        </section>
 
 
 
+        <section>
+            <div class="container mt-5">
+                <h2>Top picks for you</h2>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="64px" height="7px" display="block" fill="#25D366"
+                    viewBox="0 0 57 4" class="sc-64ptou-0 fRuWqJ">
+                    <rect width="39" height="4" rx="2"></rect>
+                    <rect x="43" width="14" height="4" rx="2"></rect>
+                </svg>
+
+                <div class="row pt-5 pb-5">
+                    <div class="col-md-3 my-2"><img class="rounded-3 w-100" src="images/image5.png"></div>
+                    <div class="col-md-3 my-2"><img class="rounded-3 w-100" src="images/image6.png"></div>
+                    <div class="col-md-3 my-2"><img class="rounded-3 w-100" src="images/image7.png"></div>
+                    <div class="col-md-3 my-2"><img class="rounded-3 w-100" src="images/image8.png"></div>
+                </div>
+            </div>
+        </section>
+        <div class="back">
+            <div class="container-fluid">
+                <div class="mobile">
+                    <div class="row">
+                        <div class="col-md-5 text-end"><img class="w-50" src="images/image9.png"></div>
+                        <div class="col-md-7 text-start mt-5 pt-5">
+                            <h3>All this from the convenience of your phone.
+                                Download the Dunzo mobile app.</h3>
+                            <div class="row mt-3 text-start">
+                                <div class="col-md-6 text-end"><a
+                                        href="https://play.google.com/store/apps/details?id=com.dunzo.user&hl=en"><img
+                                            class="w-50 rounded-pill" src="images/Playstore1.jpg"></a></div>
+                                <div class="col-md-6 text-start"><a
+                                        href="https://apps.apple.com/in/app/dunzoit/id1032391728"><img
+                                            class="w-50 rounded-pill" src="images/Applestore.jpg"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="area p-5">
+            <div class="container">
+                <h3>Areas we deliver to</h3>
+                <div class="row pt-3 pb-5">
+                    <div class="col-md-3">
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Anand Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Vasant Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Pornima Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Hanuman Gadh</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Geeta Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Hingoli Naka</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">MGM college</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Bajrang Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Bramhsing Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">City Pride</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Namskar Chowk</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Gandhi Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Balaji Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Govind Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Ram Nagar</a></p>
+                    </div>
+                    <div class="col-md-3">
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Maganpura</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">New Mondha</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Baba Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Tilak Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Vidhut Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Shahu Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Yaswant College</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Harsh Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Bhagya Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Shyam Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Shree Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Vivek Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Work Shop</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Science College</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">B.K Hall</a></p>
+                    </div>
+                    <div class="col-md-3">
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Raj Corner</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Chaitanya Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Pirburhan</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Taroda Naka</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Manik Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Sarpanch Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Deep Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Chatrapati Chowk</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Aasra Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Nalanda Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Pharande Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Ganesh Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Mor Chowk</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Kabra Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">D-Mart</a></p>
+                    </div>
+                    <div class="col-md-3">
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Old Mondha</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Gadipura</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Gurudwara</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Hanuman Peth</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Mahavir Chowk</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Sarafa</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Shivaji Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Kala Mandir</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Shivaji Nagar</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Phule Market</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">ITI Corner</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Somesh Colony</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Bus Stand</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Railway Station</a></p>
+                        <p><a class="text-decoration-none text-secondary-emphasis" href="#">Hingoli Gate</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer-custom">
+        <div class="p-5 container-fluid text-light">
+            <div class="row pl-3 pr-3 text-align-center">
+                <div>
+                    <h4>You can’t stop time, but you can save it!</h4>
+                    <p class="text-secondary-emphasis">Living in the city, there is never enough time to shop for
+                        groceries, pick-up supplies, grab food
+                        and wade
+                        through traffic on the way back home. How about we take care of all of the above for you? What
+                        if we can
+                        give you all that time back? Send packages across the city and get everything from food,
+                        groceries,
+                        medicines and pet supplies delivered right to your doorstep. From any store to your door, just
+                        make a list
+                        and we’ll make it disappear. Just Dunzo It!</p>
+                </div>
+                <hr>
+                <div class="last p-5">
+                    <div class="row">
+                        <div class="col-md-2"><a href="#"><img class="w-50" src="images/image10.png"></a></div>
+                        <div class="col-md-2">
+                            <h6>DUNZO</h6>
+                            <p><a class="text-decoration-none text-light" href="#">About</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Jobs</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Contact</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Terms & Condition</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Privacy Policy</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Dunzo For Partner</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Dunzo For Business</a></p>
+                        </div>
+                        <div class="col-md-2">
+                            <h6>SERVICEABLE CITIES</h6>
+                            <p><a class="text-decoration-none text-light" href="#">Pune</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Mumbai</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Sambhajinagar</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Nanded</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Nagpur</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Latur</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Nashik</a></p>
+                        </div>
+                        <div class="col-md-2">
+                            <h6>GET IN TOUCH</h6>
+                            <p><a class="text-decoration-none text-light" href="#">Email</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Facebook</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Twitter</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Instagram</a></p>
+                            <p><a class="text-decoration-none text-light" href="#">Linkedin</a></p>
+                        </div>
+                        <div class="col-md-4"><img class="w-75" src="images/image11.png"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
