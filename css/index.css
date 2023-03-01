@@ -10,6 +10,7 @@
 
 .position-fixed{
 	position: sticky !important;
+	/* overflow-y: hidden; */
 }
 
 .backgrond-custom{
@@ -119,3 +120,11 @@ transition: none;
 	box-shadow: none;
 }
 
+.modal-backdrop{
+	z-index: -1 !important;
+	display: none !important;
+}
+
+.dropdown-menu{
+	width: 26rem;
+}
